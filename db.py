@@ -85,7 +85,7 @@ class WriteToDatabase:
     @staticmethod
     def write_from_json(path):
         """
-        Creates table with collected data for given category
+        Creates table with collected data
         :param path: path to json file
         """
         try:
@@ -146,10 +146,6 @@ class WriteToDatabase:
 
     @staticmethod
     def update_to_db(user):
-        """
-        Update existing table with collected data for given category
-        :param category: list of dicts contains subcategories and items in it
-        """
         try:
             conf_info = WriteToDatabase.read_config("config.conf")
             connection = psycopg2.connect(database=conf_info['database'],
